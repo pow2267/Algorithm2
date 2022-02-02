@@ -74,7 +74,9 @@ private func isUnique(_ keys: [Int], _ relation: [[String]]) -> Bool {
 private func getAllKeyCases(_ keys: [Int]) -> [[Int]] {
     var keyCases: [[Int]] = []
     
-                // 후에 고려할 수 있는 남은 조합, 가리키고 있는 인덱스, 이전까지 만든 조합 결과물
+    // keys: 조합을 만들 때 고려할 수 있는, 앞서 사용하고 남은 요소들
+    // index: 조합을 만들 때 추가할 요소를 가리키고 있는 인덱스
+    // before: 이전까지 만든 조합 결과물
     func makeKeyCases(_ keys: [Int], _ index: Int, _ before: [Int]) {
         var k = keys
         var b = before
