@@ -15,7 +15,7 @@ func solution(_ numbers: [Int64]) -> [Int64] {
         
         // number가 짝수일 때
         if number % Int64(2) == 0 {
-            bits[0] = 1
+            result.append(number + 1)
         // number가 홀수일 때
         } else {
             var index = 0
@@ -35,9 +35,9 @@ func solution(_ numbers: [Int64]) -> [Int64] {
                 bits[index-1] = 0
                 bits.append(1)
             }
+            
+            result.append(convertBitsToInt64(bits))
         }
-                    
-        result.append(convertBitsToInt64(bits))
     }
     
     return result
